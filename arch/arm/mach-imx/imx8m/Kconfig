@@ -97,6 +97,18 @@ config TARGET_IMX8MQ_EVK
 	imply BOOTSTD_FULL
 	imply BOOTSTD_BOOTCOMMAND
 
+config TARGET_IMX8MQ_ROM5720A1_2G
+        bool "imx8mq rom5720a1 2G"
+        select IMX8MQ
+        select IMX8M_LPDDR4
+        select FSL_CAAM
+        select FSL_BLOB
+        select ARCH_MISC_INIT
+        select SPL_CRYPTO if SPL
+        imply OF_UPSTREAM
+        imply BOOTSTD_FULL
+        imply BOOTSTD_BOOTCOMMAND
+
 config TARGET_IMX8MQ_PHANBELL
 	bool "imx8mq_phanbell"
 	select IMX8MQ
@@ -528,6 +540,7 @@ source "board/emcraft/imx8mp_navqp/Kconfig"
 source "board/engicam/imx8mm/Kconfig"
 source "board/engicam/imx8mp/Kconfig"
 source "board/freescale/imx8mq_evk/Kconfig"
+source "board/advantech/imx8mq_rom5720a1/Kconfig"
 source "board/freescale/imx8mm_ab2/Kconfig"
 source "board/freescale/imx8mm_evk/Kconfig"
 source "board/freescale/imx8mn_evk/Kconfig"
